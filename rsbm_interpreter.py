@@ -1,11 +1,17 @@
 class BaseInterpreter(object):
+    """Handles command-line arguments"""
+
     def __init__(self):
-        # Contains a directory that maps words to functions
         self._helpmsg = ""
+
+        # Contains a dictionary that maps words to functions
         self._funcmap = {}
+
         self._separator = "-------------\n"
 
     def interpret(self, args):
+        """Calls the method appropriate to the command-line arguments presented, using the function map (_funcmap) defined in derived classes"""
+
         # No args? display help
         if len(args) <= 1:
             print self._helpmsg
