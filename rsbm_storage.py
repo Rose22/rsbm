@@ -28,6 +28,8 @@ class StorageManager():
             save_file.write(json.dumps(init_data))
             save_file.close()
 
+            return "Setup complete. You can now use RSBM."
+
         with open(CONFIG['path']+'current_month.json', 'rb') as f:
             self.data = json.loads(f.read())
 
